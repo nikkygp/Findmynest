@@ -176,14 +176,7 @@ $errors = array();
       if(mail($email, $subject, $body, $sender_email))
       {
       echo ("<script LANGUAGE='JavaScript'>
-      var x = document.getElementById('snackbar');
-          $('#snackbar').append('Verification code has been sent to registered mail id!');
-          $('#snackbar').css('background-color', '#28a745');
-          x.className = 'show';
-          setTimeout(function(){ x.className = x.className.replace('show', ''); }, 3000);
-          setTimeout(function(){
           window.location.href='verify.php';
-        }, 800);
       </script>");
       }
       else
@@ -204,16 +197,9 @@ $errors = array();
       $sender_email = "From: FindmynestSupportTeam";
       if(mail($email, $subject, $body, $sender_email))
       {
-      echo ('<script LANGUAGE="JavaScript">
-      var x = document.getElementById("snackbar");
-          $("#snackbar").append("Verification code has been sent to registered mail id!");
-          $("#snackbar").css("background-color", "#28a745");
-          x.className = "show";
-          setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
-          setTimeout(function(){
-          window.location.href="verify.php";
-        }, 800);
-      </script>');
+        echo ("<script LANGUAGE='JavaScript'>
+        window.location.href='verify.php';
+       </script>");
       }
       else
       {
