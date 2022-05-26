@@ -60,8 +60,8 @@ $errors = array();
   {
       if($u_type == "user")
       {
-      echo $sql = "INSERT INTO tbl_userdetails (`fname`, `phone`,`place`,`createdDate`) VALUES ('$fname','$phone', '$place','$c_date')";
-      echo $sql2 = "INSERT INTO tbl_usercredentials (`email`, `pass`,`createdDate`) VALUES ('$email','$pass_encrypt','$c_date')";
+      $sql = "INSERT INTO tbl_userdetails (`fname`, `phone`,`place`,`createdDate`) VALUES ('$fname','$phone', '$place','$c_date')";
+      $sql2 = "INSERT INTO tbl_usercredentials (`email`, `pass`,`createdDate`) VALUES ('$email','$pass_encrypt','$c_date')";
               if(mysqli_query($conn, $sql) && mysqli_query($conn, $sql2))
               {
                 $_SESSION['loginMessage'] = "Register Success";
