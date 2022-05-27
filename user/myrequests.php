@@ -1,7 +1,7 @@
 <?php
 include 'header1.php';
 $user = $_SESSION['email'];
-$query = "SELECT * FROM tbl_ads WHERE username = '$user' and seller_name != ''";
+$query = "SELECT * FROM tbl_ads WHERE username = '$user' and seller_name != '' and status != 5";
 $res = mysqli_query($conn,$query);
 ?>
 <div class="heading text-center mx-auto mt-5">

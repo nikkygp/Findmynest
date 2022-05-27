@@ -1,4 +1,3 @@
-
 <?php 
 session_start();
 require "../config.php";
@@ -13,7 +12,7 @@ $errors = array();
   $fname = $_POST['fname'];
   $email = $_POST['email'];
   $phone = $_POST['phone'];
-  $place = $_POST['place'];
+  $place = ucwords($_POST['place']);
   $u_type = $_POST['u_type'];
   $pass = $_POST['password'];
 
@@ -60,9 +59,14 @@ $errors = array();
   {
       if($u_type == "user")
       {
-      $sql = "INSERT INTO tbl_userdetails (`fname`, `phone`,`place`,`createdDate`) VALUES ('$fname','$phone', '$place','$c_date')";
-      $sql2 = "INSERT INTO tbl_usercredentials (`email`, `pass`,`createdDate`) VALUES ('$email','$pass_encrypt','$c_date')";
-              if(mysqli_query($conn, $sql) && mysqli_query($conn, $sql2))
+      $sql = "INSERT INTO tbl_usercredentials (`email`, `pass`,`createdDate`) VALUES ('$email','$pass_encrypt','$c_date')";
+      $qw = mysqli_query($conn,$sql);
+      $s = "SELECT `user_id` FROM tbl_usercredentials WHERE `email` = '$email'";
+      $q = mysqli_query($conn,$s);
+      $ro1 = mysqli_fetch_array($q);
+      $u_id = $ro1['user_id'];
+      $sql2 = "INSERT INTO tbl_userdetails (`user_id`,`fname`, `phone`,`place`,`createdDate`) VALUES ('$u_id','$fname','$phone', '$place','$c_date')";
+              if(mysqli_query($conn, $sql2))
               {
                 $_SESSION['loginMessage'] = "Register Success";
                 header("Location: login.php");
@@ -70,6 +74,8 @@ $errors = array();
               else
               {
                 $errors['signup-error'] = "Registration Failed, Internal error!";
+                $err = "DELETE FROM `tbl_usercredentials` WHERE `email` = '$email'";
+                mysqli_query($conn,$err);
               }
       }
       if($u_type == "agent")
