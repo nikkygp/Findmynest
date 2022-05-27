@@ -214,7 +214,7 @@ $res2 = mysqli_query($conn,$query2);
                                 <h6 class="card-title mt-2">Rs. '.$row1['ad_price'].'</h6>
                                 ');
                               }
-                              if($row['ad_cat']=='Rent')
+                              if($row1['ad_cat']=='Rent')
                               {
                                 echo('
                                 <h6 class="card-title mt-2">Rs. '.$row1['ad_price'].'/month</h6>
