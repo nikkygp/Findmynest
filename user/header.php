@@ -106,6 +106,7 @@ $r = mysqli_fetch_array($res1);
         <li><a class="info-sec2" href="#!">Home loans</a>
           <ul class="enav-edropdown">
             <li><a class="d-down" href="homeloan.php">Apply loan</a></li>
+            <li><a class="d-down" href="mortgage_calc.php">Mortgage Calculator</a></li>
             <li><a class="d-down" href="loan_status.php">Loan status</a></li>
           </ul>
        </li>

@@ -23,7 +23,7 @@ include 'header1.php';
                             <div class="col-md-9">
                                 <div class="form-group">
                                     <label>Name</label>
-                                    <input type="text" id="fname" class="form-control" name="name" >
+                                    <input type="text" id="fname" value="<?php echo $r['fname']; ?>" class="form-control" name="name" disabled>
                                 </div>
                                 <span id="name" class="er"><font size="2">Please enter a valid name, Numbers not allowed!!</font></span>
 
@@ -96,7 +96,7 @@ include 'header1.php';
                               <div class="col-9">
                                 <div class="form-group">
                                 <label for="inputAddress2" class="form-label">Loan Amount</label>
-                                <input type="text" class="form-control" id="area" name="loan_amt" required="required">
+                                <input type="text" class="form-control" id="area" name="loan_amt" required="required" maxlength="8">
                                   </div>
                                   <span id="earea" class="er"><font size="2">Letters not allowed!!</font></span>
                               </div>
@@ -137,7 +137,7 @@ include 'header1.php';
                                 <div class="col-md-9">
                                   <div class="form-group">
                                   <label for="inputCity" class="form-label">Net monthly income</label>
-                                  <input type="text" class="form-control" id="area" name="income" required="required">
+                                  <input type="text" class="form-control" id="area" name="income" maxlength="6" required="required">
                                 </div>
                                 <span id="earea" class="er"><font size="2">Letters not allowed!!</font></span>
                                 </div>

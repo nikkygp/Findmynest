@@ -73,6 +73,32 @@ $res1 = mysqli_query($conn,$query1);
 						</div>
 					</div>
         </div>
+
+
+        <div class="col mt-5">
+         <div class="card mt-3">
+					<div class="card-body">
+					<h5>Location</h5>
+							<div class="card horizontal round border-1 mt-2">
+	                        <div class="row">
+	                            <div class="col-w-25">
+	                            </div>
+	                            <div class="col p-3">
+	                            <div class="card-stacked">
+	                              <div class="card-content m-2">
+                                <iframe width="100%" height="200" src="https://maps.google.com/maps?q=<?php echo 
+	                              	$row['lat']; ?>,<?php echo $row['lng']; ?>&output=embed">
+                                  </iframe>
+	                              </div>
+	                            </div>
+	                            </div>
+	                        </div>
+	                      </div>
+						</div>
+					</div>
+        </div>
+
+
     </div>
     <div class="col-md-7 bg-white p-4">
       <div class="row mt-1">
